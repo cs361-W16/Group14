@@ -1,5 +1,9 @@
 $(document).ready(function(){
+    var usedCards = []
+
     $("#dealButton").click(function(){
-        alert("Deal Button Clicked!");
+        $.post("/AcesUp/deal.json", usedCards, function(data, status){
+            alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+        });
     });
 });

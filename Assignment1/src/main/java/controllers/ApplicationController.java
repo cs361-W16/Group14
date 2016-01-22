@@ -16,6 +16,8 @@
 
 package controllers;
 
+import Model.Card;
+import Model.Deck;
 import ninja.Result;
 import ninja.Results;
 
@@ -33,6 +35,10 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
 
-
+    public Result acesDeal(Card[] usedCards){
+        Deck d = new Deck(usedCards);
+        Card[] fourCards = d.deal();
+        return Results.json().render(fourCards);
+    }
 
 }
