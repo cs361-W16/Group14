@@ -12,7 +12,7 @@ public class Deck
 {
     private Card[] usedCards;
     private Card[] deck;
-    private String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+    private int[] suits = {1, 2, 3, 4};
     private int[] ranks = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
 
 
@@ -20,7 +20,7 @@ public class Deck
         usedCards = cards;
         this.deck = new Card[52];
         int i = 0;
-        for (String s: suits){
+        for (int s: suits){
             for(int r : ranks){
                 deck[i] = new Card(r,s);
             }

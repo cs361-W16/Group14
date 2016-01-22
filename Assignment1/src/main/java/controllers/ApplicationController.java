@@ -20,6 +20,7 @@ import Model.Card;
 import Model.Deck;
 import ninja.Result;
 import ninja.Results;
+import ninja.Context;
 
 import com.google.inject.Singleton;
 
@@ -35,10 +36,22 @@ public class ApplicationController {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
 
-    public Result acesDeal(Card[] usedCards){
-        System.out.println("Used cards: " + usedCards.toString());
-        Deck d = new Deck(usedCards);
+    public Result acesDeal(Card c){
+        //Ostensibly, the framework should cast the serialized JSON array into a Card since that's the argument
+        //Make sure that c is actually a card
+        //if("Hearts".equals(c.suit)){
+        //    System.out.println("Bananas");
+        //}
+
+
+        /*Deck d = new Deck(usedCards);
         Card[] fourCards = d.deal();
+        */
+
+
+        Card[] fourCards = new Card[2];
+        fourCards[1] = new Card(1, 1);
+        fourCards[2] = new Card(10, 4);
         return Results.json().render(fourCards);
     }
 

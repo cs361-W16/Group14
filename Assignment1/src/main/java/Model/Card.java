@@ -7,15 +7,16 @@ import java.io.Serializable;
  */
 public class Card implements Serializable {
     public int rank;
-    public String suit;
+    public int suit;
 
-    public Card(int r, String s){
-        rank = r;
-        suit = s;
+    public Card(int r, int s){
+        this.rank = r;
+        this.suit = s;
     }
 
     public Card(){
-
+        this.rank = 1;
+        this.suit = 1;
     }
 
     public String toString(){
@@ -48,8 +49,18 @@ public class Card implements Serializable {
             case 13: tempString = tempString + "King ";
                 break;
         }
+        switch (suit){
+            case 1: tempString = tempString + "Spades";
+                break;
+            case 2: tempString = tempString + "Hearts";
+                break;
+            case 3: tempString = tempString + "Diamonds";
+                break;
+            case 4: tempString = tempString + "Clubs";
+                break;
+        }
 
-        return tempString + suit;
+        return tempString;
 
     }
 
