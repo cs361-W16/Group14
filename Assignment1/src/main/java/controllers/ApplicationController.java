@@ -36,6 +36,7 @@ public class ApplicationController {
     }
 
     public Result acesDeal(Card[] usedCards){
+        System.out.println("Used cards: " + usedCards.toString());
         Deck d = new Deck(usedCards);
         Card[] fourCards = d.deal();
         return Results.json().render(fourCards);
