@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class AcesUpTest extends NinjaFluentLeniumTest {
 
+    //First test that we can get anything on the page. This will be changed later to a better test
     @Test
     public void testAcesDeal(){
         goTo(getServerAddress() + "/AcesUp");

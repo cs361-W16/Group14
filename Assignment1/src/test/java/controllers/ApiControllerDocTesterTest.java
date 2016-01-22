@@ -17,15 +17,15 @@
 package controllers;
 
 
-import ninja.NinjaFluentLeniumTest;
+
 import org.junit.Test;
 
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
-import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
+import Model.Card;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
     
@@ -51,5 +51,12 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
 
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
+    }
+
+    @Test
+    public void testCards(){
+        Card c = new Card(10, "Hearts");
+        String s = c.toString();
+        assertThat(s, containsString("Ten Hearts"));
     }
 }
