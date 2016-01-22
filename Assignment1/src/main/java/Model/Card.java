@@ -10,8 +10,8 @@ public class Card implements Serializable {
     public String suit;
 
     public Card(int r, String s){
-        rank = r;
-        suit = s;
+        this.rank = r;
+        this.suit = s;
     }
 
     public Card(){
