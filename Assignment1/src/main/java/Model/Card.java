@@ -14,6 +14,10 @@ public class Card implements Serializable {
         suit = s;
     }
 
+    public Card(){
+
+    }
+
     public String toString(){
         String tempString = "";
         switch (rank){

@@ -3,7 +3,8 @@ $(document).ready(function(){
 
     $("#dealButton").click(function(){
         $.post("/AcesUp/deal.json", usedCards, function(data, status){
-            alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+            alert("Data: " + JSON.stringify(data));
+            usedCards.push(data);
         });
     });
 });
